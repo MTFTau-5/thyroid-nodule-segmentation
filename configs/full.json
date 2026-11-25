@@ -1,0 +1,46 @@
+{
+  "data_root": "data",
+  "splits": "artifacts/splits",
+  "out": "runs/full_enhanced",
+  "seed": 42,
+  "size": 1024,
+  "batch_size": 16,
+  "workers": 0,
+  "cpu_threads": 4,
+  "epochs": 100,
+  "lr": 0.0003,
+  "weight_decay": 0.0001,
+  "amp": true,
+  "model": {
+    "base": 64,
+    "global_attention": true,
+    "heads": 4,
+    "depth": 3,
+    "refinement": "context",
+    "snake_kernel": 9,
+    "window": 9,
+    "radius": 2,
+    "detach_roles": true,
+    "multiscale_context": true,
+    "refinement_steps": 3
+  },
+  "loss": {
+    "coarse_weight": 0.4,
+    "boundary_weight": 0.2,
+    "boundary_radius": 2
+  },
+  "augmentation": {
+    "elastic_prob": 0.25,
+    "elastic_alpha": 0.02,
+    "elastic_sigma": 0.04,
+    "speckle_prob": 0.35,
+    "speckle_std": 0.15,
+    "gain_prob": 0.35,
+    "gain_range": [0.8, 1.2],
+    "attenuation_max": 0.35,
+    "bright_spot_prob": 0.2,
+    "bright_spot_strength": 0.25
+  },
+  "upscale": false,
+  "resize_filter": "lanczos"
+}

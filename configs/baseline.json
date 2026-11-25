@@ -1,0 +1,32 @@
+{
+  "data_root": "data",
+  "splits": "artifacts/splits",
+  "out": "runs/baseline",
+  "seed": 42,
+  "size": 1024,
+  "batch_size": 2,
+  "workers": 0,
+  "cpu_threads": 4,
+  "epochs": 100,
+  "lr": 0.0003,
+  "weight_decay": 0.0001,
+  "amp": true,
+  "model": {
+    "base": 64,
+    "global_attention": false,
+    "heads": 4,
+    "depth": 1,
+    "refinement": "none",
+    "snake_kernel": 9,
+    "window": 9,
+    "radius": 2,
+    "detach_roles": true
+  },
+  "loss": {
+    "coarse_weight": 0.4,
+    "boundary_weight": 0.2,
+    "boundary_radius": 2
+  },
+  "upscale": false,
+  "resize_filter": "lanczos"
+}

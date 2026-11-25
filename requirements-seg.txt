@@ -1,0 +1,22 @@
+# Direct dependencies for segmentation training, evaluation, prediction and tests.
+# Python 3.10+; install with: python -m pip install -r requirements-seg.txt
+# Install a PyTorch build appropriate for the target CPU/CUDA runtime.
+# Dependency wheels and CUDA drivers are not included in the source ZIP.
+# Local validation environment: Python 3.10.22, torch 2.14.1,
+# numpy 2.2.6, Pillow 12.3.0, scipy 1.15.3.
+
+# Model, automatic differentiation, attention and data loading.
+torch>=2.3
+
+# Image arrays, augmentation and metric reductions.
+numpy>=1.24
+
+# Image/mask loading, resizing and prediction exports.
+Pillow>=9.1
+
+# Elastic augmentation and distance/boundary metrics.
+scipy>=1.10
+
+# unittest, argparse, json, pathlib and other standard-library modules need no pip packages.
+# The standalone GPU benchmarks (1.py / 2.py) are outside this segmentation package;
+# JAX, torchvision, OpenCV, albumentations and tqdm are not required.
